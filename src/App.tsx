@@ -6,6 +6,7 @@ import { store } from './store';
 import { theme } from './theme';
 import { appStyles } from './AppStyles';
 import Sidebar from './components/Sidebar';
+import Footer from './components/Footer';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
@@ -76,18 +77,7 @@ function App() {
               <Education />
               <Projects />
               <Publications />
-
-              <Box component="footer" sx={appStyles.footer}>
-                <p>
-                  Loosely designed in{' '}
-                  <span style={appStyles.footerHighlight}>Figma</span> and coded in{' '}
-                  <span style={appStyles.footerHighlight}>Antigravity</span>. Built with{' '}
-                  <span style={appStyles.footerHighlight}>React</span>,{' '}
-                  <span style={appStyles.footerHighlight}>TypeScript</span>, and{' '}
-                  <span style={appStyles.footerHighlight}>Material UI</span>, deployed with{' '}
-                  <span style={appStyles.footerHighlight}>Vercel</span>.
-                </p>
-              </Box>
+              <Footer />
             </Box>
           </Box>
         </Box>
