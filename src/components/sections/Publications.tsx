@@ -7,12 +7,12 @@ import { publicationsStyles } from './PublicationsStyles';
 
 const Publications = memo(() => {
     return (
-        <Box id="publications" component="section" sx={publicationsStyles.section}>
-            <Typography variant="h6" sx={publicationsStyles.heading}>
+        <Box id="publications" component="section" aria-labelledby="publications-heading" sx={publicationsStyles.section}>
+            <Typography id="publications-heading" variant="h6" component="h2" sx={publicationsStyles.heading}>
                 Writing
             </Typography>
 
-            <Box component="ul" sx={{ display: 'flex', flexDirection: 'column', gap: 4, listStyle: 'none', p: 0, m: 0 }}>
+            <Box component="ul" role="list" sx={{ display: 'flex', flexDirection: 'column', gap: 4, listStyle: 'none', p: 0, m: 0 }} aria-label="Published articles and writings">
                 {publications.map((pub) => (
                     <Box component="li" key={pub.title}>
                         <Card elevation={0} sx={publicationsStyles.card}>
@@ -27,10 +27,11 @@ const Publications = memo(() => {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         underline="none"
-                                        aria-label={`${pub.title} (opens in new tab)`}
+                                        aria-label={`Read article: ${pub.title} (opens in new tab)`}
+                                        title={`Read ${pub.title}`}
                                         sx={publicationsStyles.link}
                                     >
-                                        <Typography variant="h6" sx={publicationsStyles.title}>
+                                        <Typography variant="h6" component="h3" sx={publicationsStyles.title}>
                                             {pub.title}
                                             <OpenInNewIcon sx={publicationsStyles.linkIcon} aria-hidden="true" />
                                         </Typography>

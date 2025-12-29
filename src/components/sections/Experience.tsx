@@ -7,12 +7,12 @@ import { experienceStyles } from './ExperienceStyles';
 
 const Experience = memo(() => {
     return (
-        <Box id="experience" component="section" sx={experienceStyles.section}>
-            <Typography variant="h6" sx={experienceStyles.heading}>
+        <Box id="experience" component="section" aria-labelledby="experience-heading" sx={experienceStyles.section}>
+            <Typography id="experience-heading" variant="h6" component="h2" sx={experienceStyles.heading}>
                 Experience
             </Typography>
 
-            <Stack component="ol" spacing={4} sx={{ listStyle: 'none', p: 0, m: 0 }}>
+            <Stack component="ol" role="list" spacing={4} sx={{ listStyle: 'none', p: 0, m: 0 }} aria-label="Professional experience timeline">
                 {experiences.map((exp) => (
                     <Box component="li" key={`${exp.company}-${exp.role}`}>
                         <Card elevation={0} sx={experienceStyles.card}>
@@ -26,14 +26,15 @@ const Experience = memo(() => {
                                 </Typography>
 
                                 <Box>
-                                    <Typography variant="h6" sx={experienceStyles.roleTitle}>
+                                    <Typography variant="h6" component="h3" sx={experienceStyles.roleTitle}>
                                         {exp.url !== '#' ? (
                                             <Link
                                                 href={exp.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 underline="none"
-                                                aria-label={`${exp.role} at ${exp.company} (opens in new tab)`}
+                                                aria-label={`${exp.role} at ${exp.company} - Visit company website (opens in new tab)`}
+                                                title={`Visit ${exp.company} website`}
                                                 sx={{ color: 'inherit', '&:hover': { color: 'primary.main' } }}
                                             >
                                                 {exp.role} • {exp.company}
@@ -44,7 +45,7 @@ const Experience = memo(() => {
                                         )}
                                     </Typography>
 
-                                    <Stack component="ul" spacing={1} sx={{ mb: 2, listStyle: 'none', p: 0, m: 0 }}>
+                                    <Stack component="ul" role="list" spacing={1} sx={{ mb: 2, listStyle: 'none', p: 0, m: 0 }} aria-label={`Responsibilities at ${exp.company}`}>
                                         {exp.description.map((desc, i) => (
                                             <Typography
                                                 key={i}

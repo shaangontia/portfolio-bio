@@ -6,11 +6,11 @@ import { aboutStyles } from './AboutStyles';
 
 const About = memo(() => {
     return (
-        <Box id="about" component="section" sx={aboutStyles.section}>
-            <Typography variant="h6" sx={aboutStyles.heading}>
+        <Box id="about" component="section" aria-labelledby="about-heading" sx={aboutStyles.section}>
+            <Typography id="about-heading" variant="h6" component="h2" sx={aboutStyles.heading}>
                 About
             </Typography>
-            <Typography variant="body1" sx={aboutStyles.text}>
+            <Typography variant="body1" component="div" sx={aboutStyles.text}>
                 {bio.about}
             </Typography>
         </Box>

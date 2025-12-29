@@ -8,12 +8,12 @@ import { projectsStyles } from './ProjectsStyles';
 
 const Projects = memo(() => {
     return (
-        <Box id="projects" component="section" sx={projectsStyles.section}>
-            <Typography variant="h6" sx={projectsStyles.heading}>
+        <Box id="projects" component="section" aria-labelledby="projects-heading" sx={projectsStyles.section}>
+            <Typography id="projects-heading" variant="h6" component="h2" sx={projectsStyles.heading}>
                 Projects
             </Typography>
 
-            <Stack component="ul" spacing={4} sx={{ listStyle: 'none', p: 0, m: 0 }}>
+            <Stack component="ul" role="list" spacing={4} sx={{ listStyle: 'none', p: 0, m: 0 }} aria-label="Featured projects">
                 {projects.map((project) => (
                     <Box component="li" key={project.title}>
                         <Card elevation={0} sx={projectsStyles.card}>
@@ -25,7 +25,7 @@ const Projects = memo(() => {
                                 </Box>
 
                                 <Box sx={{ flex: 1 }}>
-                                    <Typography variant="h6" sx={projectsStyles.title}>
+                                    <Typography variant="h6" component="h3" sx={projectsStyles.title}>
                                         {project.title}
                                         <IconButton
                                             component="a"
@@ -35,8 +35,9 @@ const Projects = memo(() => {
                                             rel="noopener noreferrer"
                                             sx={projectsStyles.linkButton}
                                             aria-label={`View ${project.title} project (opens in new tab)`}
+                                            title={`Visit ${project.title}`}
                                         >
-                                            <OpenInNewIcon fontSize="small" />
+                                            <OpenInNewIcon fontSize="small" aria-hidden="true" />
                                         </IconButton>
                                     </Typography>
 
@@ -46,6 +47,7 @@ const Projects = memo(() => {
 
                                     <Stack
                                         component="ul"
+                                        role="list"
                                         direction="row"
                                         spacing={1}
                                         flexWrap="wrap"
@@ -55,7 +57,7 @@ const Projects = memo(() => {
                                     >
                                         {project.tech.map((tech) => (
                                             <Box component="li" key={tech}>
-                                                <Chip label={tech} size="small" />
+                                                <Chip label={tech} size="small" aria-label={`Technology: ${tech}`} />
                                             </Box>
                                         ))}
                                     </Stack>

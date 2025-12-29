@@ -7,12 +7,12 @@ import { educationStyles } from './EducationStyles';
 
 const Education = memo(() => {
     return (
-        <Box id="education" component="section" sx={educationStyles.section}>
-            <Typography variant="h6" sx={educationStyles.heading}>
+        <Box id="education" component="section" aria-labelledby="education-heading" sx={educationStyles.section}>
+            <Typography id="education-heading" variant="h6" component="h2" sx={educationStyles.heading}>
                 Education
             </Typography>
 
-            <Stack component="ul" spacing={4} sx={{ listStyle: 'none', p: 0, m: 0 }}>
+            <Stack component="ul" role="list" spacing={4} sx={{ listStyle: 'none', p: 0, m: 0 }} aria-label="Educational background">
                 {education.map((edu) => (
                     <Box component="li" key={`${edu.school}-${edu.degree}`}>
                         <Card elevation={0} sx={educationStyles.card}>
@@ -23,7 +23,7 @@ const Education = memo(() => {
 
                                 <Box sx={{ flex: 1 }}>
                                     <Box sx={educationStyles.headerRow}>
-                                        <Typography variant="h6" sx={educationStyles.schoolName}>
+                                        <Typography variant="h6" component="h3" sx={educationStyles.schoolName}>
                                             {edu.school}
                                         </Typography>
                                         <Typography
@@ -41,10 +41,10 @@ const Education = memo(() => {
                                     </Typography>
 
                                     <Box>
-                                        <Typography variant="body2" sx={educationStyles.achievementsLabel}>
+                                        <Typography variant="body2" component="h4" sx={educationStyles.achievementsLabel}>
                                             Achievements:
                                         </Typography>
-                                        <Stack component="ul" spacing={0.5} sx={{ listStyle: 'none', p: 0, m: 0 }}>
+                                        <Stack component="ul" role="list" spacing={0.5} sx={{ listStyle: 'none', p: 0, m: 0 }} aria-label={`Achievements at ${edu.school}`}>
                                             {edu.achievements.map((achievement, i) => (
                                                 <Typography
                                                     key={i}

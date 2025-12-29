@@ -4,23 +4,30 @@ A pixel-perfect, responsive personal portfolio website built with modern web tec
 
 ## ✨ Features
 
--   **Modern Tech Stack**: Built with React 18+, TypeScript, and Vite for lightning-fast performance.
+-   **Modern Tech Stack**: Built with React 19, TypeScript, and Vite for lightning-fast performance.
 -   **Responsive Design**: Mobile-first approach ensuring a great experience across all devices.
 -   **State Management**: Utilizes Redux Toolkit for efficient global state management.
+-   **Portfolio Sections**:
+    -   About Me with skills showcase
+    -   Professional Experience timeline
+    -   Education background
+    -   Featured Projects
+    -   Publications & Articles
 -   **UI/UX**:
-    -   Material UI (MUI) components & icons.
-    -   Smooth scrolling navigation.
+    -   Material UI (MUI) v7 components & icons.
+    -   Smooth scrolling navigation with React Scroll.
     -   Interactive hover effects and micro-animations using Framer Motion.
-    -   Customized typography (Inter/Calibre fonts).
--   **Clean Architecture**: Component-based structure with separate styling and logic.
+    -   Custom theme with Emotion styling.
+    -   Fixed sidebar with social links.
+-   **Clean Architecture**: Component-based structure with separate styling files using TypeScript.
 
 ## 🛠️ Technology Stack
 
--   **Core**: [React](https://reactjs.org/) (Hooks, Context), [TypeScript](https://www.typescriptlang.org/)
--   **Build Tool**: [Vite](https://vitejs.dev/)
--   **Styling**: CSS Modules / Styled Components patterns, [Material UI (MUI)](https://mui.com/), [Framer Motion](https://www.framer.com/motion/)
--   **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)
--   **Routing/Navigation**: [React Scroll](https://www.npmjs.com/package/react-scroll)
+-   **Core**: [React](https://reactjs.org/) 19.2.0, [TypeScript](https://www.typescriptlang.org/) 5.9.3
+-   **Build Tool**: [Vite](https://vitejs.dev/) 7.2.4
+-   **Styling**: [Emotion](https://emotion.sh/) (styled components), [Material UI (MUI)](https://mui.com/) 7.3.6, [Framer Motion](https://www.framer.com/motion/) 12.23.26
+-   **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/) 2.11.2
+-   **Navigation**: [React Scroll](https://www.npmjs.com/package/react-scroll) 1.9.3
 
 ## 🚀 Getting Started
 
@@ -34,9 +41,6 @@ Follow these steps to get the project running locally on your machine.
 ### Installation
 
 1.  **Clone the repository** (if applicable) or navigate to the project directory:
-    ```bash
-    cd /path/to/personal_bio
-    ```
 
 2.  **Install dependencies**:
     ```bash
@@ -73,23 +77,37 @@ npm run preview
 
 ```
 src/
-├── components/     # Reusable UI components
-├── assets/         # Images, fonts, and static assets
-├── styles/         # Global styles and theme configurations
-├── utils/          # Helper functions and hooks
-├── data.ts         # Centralized content data (Experience, Projects, etc.)
-├── App.tsx         # Main application component
-└── main.tsx        # Entry point
+├── components/
+│   ├── sections/
+│   │   ├── About.tsx & AboutStyles.ts
+│   │   ├── Experience.tsx & ExperienceStyles.ts
+│   │   ├── Education.tsx & EducationStyles.ts
+│   │   ├── Projects.tsx & ProjectsStyles.ts
+│   │   └── Publications.tsx & PublicationsStyles.ts
+│   ├── Sidebar.tsx & SidebarStyles.ts
+│   └── Footer.tsx & FooterStyles.ts
+├── store/
+│   ├── index.ts           # Redux store configuration
+│   └── navSlice.ts        # Navigation state management
+├── assets/                # Static assets (images, icons)
+├── data.ts                # Centralized content data (Bio, Experience, Projects, Publications, etc.)
+├── theme.ts               # MUI theme configuration
+├── App.tsx & AppStyles.ts # Main application component
+├── index.css              # Global styles
+└── main.tsx               # Entry point
 ```
 
 ## 🎨 Customizing Content
 
 You can easily update the portfolio content by modifying the `src/data.ts` file. This file contains structured data for:
--   About Me
--   Experience
--   Projects
--   Contact Information
--   Social Links
+-   **Bio**: Name, tagline, hero text, about section, and skills
+-   **Experience**: Professional work history with company, role, dates, and descriptions
+-   **Education**: Academic background with degrees, dates, and achievements
+-   **Projects**: Featured projects with descriptions, tech stack, and links
+-   **Publications**: Articles and publications with titles, publishers, dates, and URLs
+-   **Social Links**: GitHub, LinkedIn, and email contact information
+
+Each section is fully typed with TypeScript interfaces for type safety and better developer experience.
 
 ## 📄 License
 
