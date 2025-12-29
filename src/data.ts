@@ -94,7 +94,7 @@ export const experiences: Experiences = [
     {
         company: "Oracle India Pvt Ltd",
         role: "Principal Engineer",
-        date: "2019 - 2022",
+        date: "2018 - 2021",
         description: [
             "Developed and maintained critical components for the company's main web application.",
             "Collaborated closely with designers to implement pixel-perfect user interfaces.",
@@ -104,6 +104,49 @@ export const experiences: Experiences = [
         ],
         url: "www.oracle.com"
     },
+    {
+        company: "Cura Tech Pvt Ltd",
+        role: "Senior iOS Developer",
+        date: "2017 - 2018",
+        description: [
+            "Developed and maintained critical components for the company's main web application.",
+            "Collaborated closely with designers to implement pixel-perfect user interfaces.",
+            "Migrated legacy codebases to modern React with Hooks and Context API.",
+            "Led the technical direction and architecture of the company's main web application.",
+            "Mentored junior developers and conducted code reviews to maintain high code quality."
+        ],
+        url: "www.oracle.com"
+    },
+    {
+        company: "Oracle India Pvt Ltd",
+        role: "Associate Application Engineer",
+        date: "Jul 2014 - Aug 2017",
+        description: [
+            "Engineered the frontend architecture for Oracle Primavera's Enterprise Project Portfolio Management application using JavaScript, HTML5, and CSS.",
+            "Implemented robust backend integration involving RESTful web services and WebSockets using Java, ensuring real-time data synchronization and high performance."
+        ],
+        url: "https://www.oracle.com"
+    },
+    {
+        company: "Oracle India Pvt Ltd",
+        role: "Graduate Student Intern",
+        date: "Jun 2013 - May 2014",
+        description: [
+            "Served as a Sustaining Engineering Developer for the Oracle Retail Merchandising System, focusing on system stability and reliability.",
+            "Conducted in-depth root cause analysis to diagnose and resolve critical product defects reported by enterprise customers, significantly improving system uptime."
+        ],
+        url: "https://www.oracle.com"
+    },
+    {
+        company: "Cognizant Technology Solutions",
+        role: "Programmer Analyst",
+        date: "Apr 2011 - Jul 2012",
+        description: [
+            "Developed scalable Business Intelligence solutions for Dun & Bradstreet's Global Linkage application as a Java BI Developer.",
+            "Leveraged a technology stack comprising J2EE, Spring Framework, JDBC, JavaScript, and JSP to deliver data-driven features in an Agile environment."
+        ],
+        url: "https://www.cognizant.com"
+    }
 ];
 
 export const education: Education[] = [
@@ -171,7 +214,7 @@ export const publications: Publications = [
 
 // Social links configuration
 export const socialLinks = {
-    github: "https://github.com/shantanugontia",
+    github: "https://github.com/shaangontia",
     linkedin: "https://www.linkedin.com/in/shantanu-gontia/",
     email: "shaan.ce@gmail.com",
 };
