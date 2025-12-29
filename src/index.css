@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400&display=swap');
+
+:root {
+  --navy: #0f172a;
+  --light-navy: #1e293b;
+  --lightest-navy: #334155;
+  --slate: #94a3b8;
+  --light-slate: #cbd5e1;
+  --lightest-slate: #e2e8f0;
+  --green: #64ffda;
+  --green-tint: rgba(100, 255, 218, 0.1);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: 'Fira Code', 'Fira Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--navy);
+  color: var(--slate);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--lightest-slate);
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: var(--green);
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--green);
+}
+
+.highlight {
+  color: var(--green);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--lightest-navy);
+  border: 3px solid var(--navy);
+  border-radius: 10px;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: var(--lightest-navy);
+  color: var(--green);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Section styling for content area */
+section {
+  scroll-margin-top: 100px;
+}
