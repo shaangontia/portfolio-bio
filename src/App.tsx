@@ -7,7 +7,6 @@ import { theme } from './theme';
 import { appStyles } from './AppStyles';
 import Sidebar from './components/Sidebar';
 import Footer from './components/Footer';
-import AdminPanel from './components/AdminPanel';
 import About from './components/sections/About';
 import Experience from './components/sections/Experience';
 import Education from './components/sections/Education';
@@ -82,9 +81,6 @@ function App() {
             </Box>
           </Box>
         </Box>
-
-        {/* Admin Panel - Only visible in development or with admin access */}
-        <AdminPanel />
       </ThemeProvider>
     </Provider>
   );
