@@ -12,4 +12,25 @@ export const footerStyles = {
     footerHighlight: {
         color: '#e2e8f0',
     } as React.CSSProperties,
+
+    visitCounter: {
+        mt: 2,
+        pt: 2,
+        borderTop: '1px solid #233554',
+        display: 'flex',
+        alignItems: 'center',
+        gap: 1,
+        fontSize: '13px',
+        color: '#64ffda',
+    } as SxProps<Theme>,
+
+    visitIcon: {
+        fontSize: '16px',
+        color: '#64ffda',
+    } as SxProps<Theme>,
+
+    visitCount: {
+        fontWeight: 600,
+        color: '#e2e8f0',
+    } as React.CSSProperties,
 };
